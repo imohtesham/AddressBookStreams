@@ -217,6 +217,22 @@ public class AddressBook {
             }
         }
     }
+    public void GetNumberOfContacts()
+    {
+        System.out.print("Enter City Name Or State Name To Get The Count Of Contacts : ");
+        String countContacts = sc.next();
+        int totalCount = 0;
+        for (int i = 0; i < list.size(); i++)
+        {
+            if (list.get(i).getCity().equals(countContacts) || list.get(i).getState().equals(countContacts))
+            {
+                Person personDetails = list.get(i);
+                System.out.println(personDetails);
+                totalCount ++;
+            }
+        }
+        System.out.println("\nTotal number of contacts present in " + countContacts + " is : " + totalCount);
+    }
 
     public void displayContacts()
     {

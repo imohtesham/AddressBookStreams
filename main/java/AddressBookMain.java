@@ -34,8 +34,12 @@ public class AddressBookMain {
                 case 5:
                     //Search for person in state or city
                     addressBookService.SearchPersonInACityOrState();
-
                 case 6:
+                    //Search by Phone number
+                    addressBookService.GetNumberOfContacts();
+
+
+                case 7:
                     //Exit from program.
                     isExit = true;
                     break;
