@@ -34,22 +34,34 @@ public class AddressBookMain {
                 case 5:
                     //Search for person in state or city
                     addressBookService.SearchPersonInACityOrState();
+                    break;
                 case 6:
                     //Search by Phone number
                     addressBookService.GetNumberOfContacts();
+                    break;
                 case 7:
                     //Sort by first name
                     addressBookService.SortContactByFirstName();
+                    break;
                 case 8:
                     //Sort by Zip
                     addressBookService.SortByZipCode();
+                    break;
                 case 9:
+                    //For io file read write create
+                    addressBookService.fileCreate();
+                    addressBookService.fileReader();
+                    addressBookService.fileWrite();
+                    break;
+
+                case 10:
                     //Exit from program.
                     isExit = true;
                     break;
                 default:
                     System.out.println("Please enter valid input");
             }
+
         }
     }
 

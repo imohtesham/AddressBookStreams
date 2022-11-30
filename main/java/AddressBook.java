@@ -1,3 +1,6 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -252,14 +255,47 @@ public class AddressBook {
         });
     }
 
-    public void displayContacts()
-    {
-        for(Person element : list)
-        {
-            if(element != null)
-            {
-                System.out.println(element);
+    public void displayContacts(){
+        System.out.println(contacts);
+    }
+    public void fileCreate() {
+        System.out.println("Enter the file name to creat");
+        String filename = sc.next();
+        File     myfile = new File(filename);
+        try {
+            myfile.createNewFile();
+        } catch (IOException e) {
+            System.out.println("Unable to create this file ");
+            e.printStackTrace();
+        }
+    }
+    public void fileWrite() {
+        System.out.println("Enter the file name to in which you want to write");
+        String filename = sc.next();
+        try {
+            FileWriter fileWriter = new FileWriter(filename);
+            for (Person str : list) {
+                fileWriter.write(str + System.lineSeparator());
             }
+            fileWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+    public void fileReader() {
+        System.out.println("Enter the file name to in which you want to Read");
+        String filename = sc.next();
+        File myfile = new File(filename);
+        try {
+            Scanner s = new Scanner(myfile);
+            while(s.hasNextLine()) {
+                String Line = s.nextLine();
+                System.out.println(Line);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
