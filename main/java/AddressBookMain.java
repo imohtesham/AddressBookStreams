@@ -40,8 +40,10 @@ public class AddressBookMain {
                 case 7:
                     //Sort by first name
                     addressBookService.SortContactByFirstName();
-
                 case 8:
+                    //Sort by Zip
+                    addressBookService.SortByZipCode();
+                case 9:
                     //Exit from program.
                     isExit = true;
                     break;

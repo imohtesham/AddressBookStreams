@@ -242,6 +242,15 @@ public class AddressBook {
                     .collect(Collectors.toList()).forEach(person -> System.out.println(person.toString()));
         });
     }
+    public void SortByZipCode()
+    {
+        contacts.keySet().forEach((String key) -> {
+            contacts.get(key).stream()
+                    .sorted(Comparator.comparing(Person::getZipCode))
+                    .collect(Collectors.toList())
+                    .forEach(person -> System.out.println(person.toString()));
+        });
+    }
 
     public void displayContacts()
     {
