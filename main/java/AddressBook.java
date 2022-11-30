@@ -203,6 +203,20 @@ public class AddressBook {
         }
 
     }
+    public void SearchPersonInACityOrState()
+    {
+        System.out.print("Enter City Name Or State Name To Search Contact : ");
+        String searchCityState = sc.next();
+        System.out.println("\nFollowing are the persons who belongs to : " + searchCityState);
+        for (int i = 0; i < list.size(); i++)
+        {
+            if (list.get(i).getCity().equals(searchCityState) || list.get(i).getState().equals(searchCityState))
+            {
+                Person personDetails = list.get(i);
+                System.out.println(personDetails.getFirstName());
+            }
+        }
+    }
 
     public void displayContacts()
     {

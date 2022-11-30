@@ -32,6 +32,10 @@ public class AddressBookMain {
                     addressBookService.deleteContact();
                     break;
                 case 5:
+                    //Search for person in state or city
+                    addressBookService.SearchPersonInACityOrState();
+
+                case 6:
                     //Exit from program.
                     isExit = true;
                     break;
