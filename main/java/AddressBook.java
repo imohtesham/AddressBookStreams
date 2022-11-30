@@ -1,6 +1,8 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class AddressBook {
 
@@ -232,6 +234,13 @@ public class AddressBook {
             }
         }
         System.out.println("\nTotal number of contacts present in " + countContacts + " is : " + totalCount);
+    }
+    public void SortContactByFirstName()
+    {
+        contacts.keySet().forEach((String name) -> {
+            contacts.get(name).stream().sorted(Comparator.comparing(Person::getFirstName))
+                    .collect(Collectors.toList()).forEach(person -> System.out.println(person.toString()));
+        });
     }
 
     public void displayContacts()

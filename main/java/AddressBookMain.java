@@ -37,9 +37,11 @@ public class AddressBookMain {
                 case 6:
                     //Search by Phone number
                     addressBookService.GetNumberOfContacts();
-
-
                 case 7:
+                    //Sort by first name
+                    addressBookService.SortContactByFirstName();
+
+                case 8:
                     //Exit from program.
                     isExit = true;
                     break;
