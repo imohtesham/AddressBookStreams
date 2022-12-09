@@ -200,7 +200,35 @@ public class AddressBook {
 
 
     //Read/Write Address Book with Persons Contact as JSON File ::
+    public void JSON_File() throws IOException {
+        FileWriter JSON_File = new FileWriter("addressBook.json");
+        JSON_File.append("firstName");
+        JSON_File.append(",");
+        JSON_File.append("lastName");
+        JSON_File.append(",");
+        JSON_File.append("address");
+        JSON_File.append(",");
+        JSON_File.append("city");
+        JSON_File.append(",");
+        JSON_File.append("state");
+        JSON_File.append(",");
+        JSON_File.append("Zip Code");
+        JSON_File.append(",");
+        JSON_File.append("Phone no");
+        JSON_File.append(",");
+        JSON_File.append("email-ID");
+        JSON_File.append("\n");
+        for (AddressBookContact rowData : list) {
+            JSON_File.append(String.join(",",
+                    rowData.getFirstName() + "," + rowData.getLastName() + "," + rowData.getAddress() + ","
+                            + rowData.getCity() + "," + rowData.getState() + "," + rowData.getZip() + ","
+                            + rowData.getPhoneNumber() + "," + rowData.getEmail()));
+            JSON_File.append("\n");
+        }
 
+        JSON_File.flush();
+        JSON_File.close();
+    }
         public static void main (String[]args){
 
             Scanner userInput = new Scanner(System.in);
@@ -278,7 +306,13 @@ public class AddressBook {
                 e.printStackTrace();
             }
 
-            
+
+
+                try {
+                    myobj.JSON_File();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
 
                 chooseAddressBook = userInput.nextInt();
 
